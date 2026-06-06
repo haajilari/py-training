@@ -1,9 +1,16 @@
-import addition
-import pytest
+class A:
+   def a(self):
+       return "Function inside A"
 
-def test_add():
-    assert addition.add(1, 2) == 3
+class B:
+   def a(self):
+       return "Function inside B"
 
+class C:
+   pass
 
-def test_sub():
-    assert addition.sub(2, 1) == 1
+class D(C, A, B):
+   pass
+
+d = D()
+print(d.a())
